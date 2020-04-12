@@ -4,32 +4,38 @@
    New Perspectives on HTML5 and CSS3, 7th Edition
    Tutorial 10
    Tutorial Case
-
    Author: Emerson Xia
-   Date: 04-11-2020
+   Date:  3/12/2020
    
-   Filename:   lht_calendar.js  
 
-   Function List:
-   createCalendar(calDate)a
+   Filename:lht_calendar.js  
+  
+
+  Function List:
+   createCalendar(calDate)
+      
       Creates the calendar table for the month specified in the
       calDate parameter. The current date is highlighted in 
       the table.
-
+   
    calCaption(calDate)
+     
       Writes the caption of the calendar table
-
+   
    calWeekdayRow()
-      Writes the weekday title rows in the calendar table
-
+      
+      rites the weekday title rows in the calendar table
+   
    daysInMonth(calDate)
+      
       Returns the number of days in the month from calDate
-
+   
    calDays(calDate)
+      
       Writes the daily rows in the calendar table, highlighting calDate
-	
-   /* Set the date displayed in the calendar */
-var thisDay = new Date();
+*/
+/* Set the date displayed in the calendar */
+var thisDay = new Date("August 24, 2018");
 
 /* Write the calender to the element with the id "calendar"*/
 document.getElementById("calendar").innerHTML = createCalendar(thisDay);
@@ -58,7 +64,7 @@ function calCaption(calDate) {
     return "<caption>" + monthName[thisMonth] + " " + thisYear + "</caption>";
 }
 
-// Function to wirte a table row if weekday abbreviations
+// Function to wirte a table row of weekday abbreviations
 function calWeekdayRow() {
     //Array of weekday abbreviations
     var dayName = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
@@ -67,12 +73,11 @@ function calWeekdayRow() {
     //Loop Through the dayName array
     for (var i = 0; i < dayName.length; i++) {
         rowHTML += "<th class='calender_weekdays'>" + dayName[i] +"</th>";
-    }//for loop close
+    }
 
-    //Closing Table Row tag
     rowHTML += "</tr>";
     return rowHTML;
-}//function close
+}
 
 //Function to calculate the number of days in the month
 function daysInMonth(calDate) {
@@ -88,12 +93,12 @@ function daysInMonth(calDate) {
         dayCount[1] = 29;
         if ((thisYear % 100 != 0) || (thisYear % 400 ===0)) {
             dayCount[1] = 29;
-        }//Nested if
-    }//Main if
+        }
+    }
 
     //Return the number of days for the  current month
     return dayCount[thisMonth];
-}//end main function
+}
 
 //Function to write table rows for each day of the month
 function calDays(calDate) {
