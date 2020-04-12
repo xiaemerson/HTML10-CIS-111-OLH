@@ -101,11 +101,23 @@
       var weekDay = day.getDay();
 
       //Write blank cells preceeding the starting day
-      var htmlCode = "<tr>":
+      var htmlCode = "<tr>";
       for (var i = 0; 1 < weekDay; i++) {
          htmlCode += "<td></td>";
       }
       //Write cells for each day of the month
+      var totalDays = daysinMonth(calDate);
 
+      for (var i = 1; i <= totalDays; i++) {
+         day.setDay(i);
+         weekDay = day.getDay();
+
+         if (weekDay === 0) htmlCode += "<tr>";
+         htmlCode += "<td class='calendar_dates'>" + i + "</td>";
+         if (weekDay === 6) htmlCode += "</tr>";
+      }
+
+      return htmlCode
+               
    }
 
