@@ -4,6 +4,8 @@
    New Perspectives on HTML5 and CSS3, 7th Edition
    Tutorial 10
    Review Assignment
+   Author: Emerson Xia
+   Date: 04/16/2020
 
    The eventDates array contains the dates of events at the LHT
    The eventDescriptions array contains the event names
